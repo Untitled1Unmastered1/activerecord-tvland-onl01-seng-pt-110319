@@ -1,4 +1,3 @@
-require 'pry'
 class Actor < ActiveRecord::Base
   has_many :characters
   has_many :shows, through: :characters
@@ -9,6 +8,7 @@ class Actor < ActiveRecord::Base
   
   def list_roles
     self.characters.map do |x|
-      "#{x.characters} - #{x.shows} 
+      "#{x.characters} - #{x.shows}
+    end 
   end 
-end
+end 
